@@ -1,6 +1,7 @@
 import logging
 import os
 import telegram
+import time
 from datetime import datetime, timedelta, timezone
 from sftp_handler import sftp_checkpoint_utils
 
@@ -18,13 +19,14 @@ async def send_posts_to_channel(posts):
         last_post_date_str = last_post.split(",")[-1]
         last_post_date = datetime.fromisoformat(last_post_date_str).astimezone(timezone.utc)
     else:
-        last_post_date = (datetime.utcnow() - timedelta(days=1)).astimezone(timezone.utc)
+        last_post_date = (datetime.utcnow() - timedelta(days=28)).astimezone(timezone.utc)
     
     logger.info("Looking for new Instagram posts")
     channel_id = os.getenv("TELEGRAM_CHANNEL_ID")
     new_posts = []
     for post in posts:
         if post.taken_at > last_post_date and f'{post.pk},{post.code},{post.taken_at}' not in sent_posts:
+            time.sleep(10);
             if post.media_type == 1:
                 logger.info("Sending new picture post to Telegram channel")
                 photo = post.thumbnail_url

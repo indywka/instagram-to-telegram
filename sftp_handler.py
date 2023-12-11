@@ -36,7 +36,7 @@ def sftp_checkpoint_utils(operation, new_posts = set()):
 
     current_date = datetime.utcnow().strftime('%Y-%m-%d')
     filename = f'sent_posts_{current_date}.txt'
-    lookup_days = 7
+    lookup_days = 31
     
     # Connect to SFTP server
     with pysftp.Connection(sftp_server, username=sftp_username, password=sftp_password, cnopts=cnopts) as sftp:

@@ -30,8 +30,8 @@ def log_in_to_instagram(cl, username):
     return cl
 
 def get_latest_posts(cl, user_id):    
-    logger.info("Getting last 10 posts from Instagram...")
-    latest_posts = cl.user_medias(user_id, 10)
+    logger.info("Getting last 7 posts from Instagram...")
+    latest_posts = cl.user_medias(user_id, 7)
     
     logger.info("Sorting Instagram posts by date")
     latest_posts_sorted = sorted(latest_posts, key=lambda post: post.taken_at)
