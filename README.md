@@ -1,6 +1,12 @@
 # Instagram posts to Telegram channel
 Send your latest Instagram posts to your Telegram channel with instagrapi and a Telegram bot.
 
+## Helpful links to create a sftp connection on windows
+[1](https://winitpro.ru/index.php/2016/03/31/sftp-ssh-ftp-na-windows-server-2012-r2/)
+[2](https://www.jetbrains.com/help/pycharm/creating-a-remote-server-configuration.html)
+[3](https://v2cloud.com/tutorials/how-to-set-up-an-sftp-server-in-windows)
+[4](https://support.cloudways.com/en/articles/5119485-guide-to-connecting-to-your-application-using-ssh-sftp)
+
 ## Features
 - Shares pictures, albums and videos
 - Optional login to pull private posts
